@@ -1,0 +1,89 @@
+<openerp>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="company_profile.list">
+      <field name="name">company_profile list</field>
+      <field name="model">company_profile.profile</field>
+      <field name="arch" type="xml">
+      <form string="Company" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                    <group string="Company">
+                        <label for="id" string="Company Name"/>
+                        <div>
+                            <field name="name_c" class="oe_inline"/>
+                            <span style="margin-right:5px;"></span>
+                    <!--        <field name="fiscalyear_last_day" class="oe_inline oe_text_right"/> -->
+                        </div>
+                    </group>
+                    <group string="Company Description">
+                        <label for="id" string="Company Mission"/>
+                        <div>
+                            <field name="mission" class="oe_inline"/>
+                            <span style="margin-right:5px;"></span>
+                    <!--        <field name="fiscalyear_last_day" class="oe_inline oe_text_right"/> -->
+                        </div>
+                        <label for="id" string="Company View"/>
+                        <div>
+                            <field name="view" class="oe_inline"/>
+                            <span style="margin-right:5px;"></span>
+                    <!--        <field name="fiscalyear_last_day" class="oe_inline oe_text_right"/> -->
+                        </div>
+                        <label for="id" string="Company Values"/>
+                        <div>
+                            <field name="values" class="oe_inline"/>
+                            <span style="margin-right:5px;"></span>
+                    <!--        <field name="fiscalyear_last_day" class="oe_inline oe_text_right"/> -->
+                        </div>
+
+                    </group>
+
+      </form>
+      </field>
+    </record>
+    
+
+    <!-- actions opening views on models -->
+   
+    <record model="ir.actions.act_window" id="company_profile.action_window">
+      <field name="name">Company Profile</field>
+      <field name="res_model">company_profile.profile</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="target">inline</field>
+    </record>
+  
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="company_profile.action_server">
+      <field name="name">company_profile server</field>
+      <field name="model_id" ref="model_company_profile_company_profile"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    
+    <menuitem name="Company Profile" id="company_profile.menu_root"/>
+   
+    <!-- menu categories -->
+    
+    <menuitem name="Company Profile" id="company_profile.menu_1" parent="company_profile.menu_root" action="company_profile.action_window"/>
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="company_profile.menu_1_list" parent="company_profile.menu_1"
+              action="company_profile.action_window"/>
+    <menuitem name="Server to list" id="company_profile" parent="company_profile.menu_2"
+              action="company_profile.action_server"/>
+    -->
+  </data>
+</openerp>
