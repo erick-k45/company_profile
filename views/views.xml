@@ -15,6 +15,7 @@
                         <div>
                             <field name="name_c" class="oe_inline"/>
                             <span style="margin-right:5px;"></span>
+                    <field name="image" widget='image' class="oe_avatar" options='{"preview_image":"image_medium"}'/>
                     <!--        <field name="fiscalyear_last_day" class="oe_inline oe_text_right"/> -->
                         </div>
                     </group>
